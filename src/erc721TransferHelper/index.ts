@@ -1,25 +1,21 @@
 import { Contract, ethers, Signer } from "ethers";
 import { Provider } from "@ethersproject/providers";
 import TranferHelperAbi from "abis/erc721TransferHelper.abi.json";
+import {
+  Erc721TransferHelperAbi,
+  Erc721TransferHelperAbi__factory,
+} from "typechain";
 
 export class Erc721TransferHelper {
-  public abi: typeof TranferHelperAbi = TranferHelperAbi;
+  public contract: Erc721TransferHelperAbi;
   public signerOrProvider: Signer | Provider;
   public contractAddress: string;
-  public chainId: number;
-  public contract: Contract;
 
-  constructor(
-    signerOrProvider: Signer | Provider,
-    contractAddress: string,
-    chainId: number
-  ) {
+  constructor(signerOrProvider: Signer | Provider, contractAddress: string) {
     this.signerOrProvider = signerOrProvider;
     this.contractAddress = contractAddress;
-    this.chainId = chainId;
-    this.contract = new ethers.Contract(
+    this.contract = Erc721TransferHelperAbi__factory.connect(
       contractAddress,
-      this.abi,
       signerOrProvider
     );
   }

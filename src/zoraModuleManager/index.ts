@@ -1,25 +1,18 @@
-import { Contract, ethers, Signer } from "ethers";
+import { Contract, ContractTransaction, ethers, Signer } from "ethers";
 import { Provider } from "@ethersproject/providers";
 import ModuleManagerAbi from "abis/zoraModuleManager.abi.json";
+import { ZoraModuleManagerAbi, ZoraModuleManagerAbi__factory } from "typechain";
 
-export class Erc721TransferHelper {
-  public abi: typeof ModuleManagerAbi = ModuleManagerAbi;
+export class ZoraModuleManager {
+  public contract: ZoraModuleManagerAbi;
   public signerOrProvider: Signer | Provider;
   public contractAddress: string;
-  public chainId: number;
-  public contract: Contract;
 
-  constructor(
-    signerOrProvider: Signer | Provider,
-    contractAddress: string,
-    chainId: number
-  ) {
+  constructor(signerOrProvider: Signer | Provider, contractAddress: string) {
     this.signerOrProvider = signerOrProvider;
     this.contractAddress = contractAddress;
-    this.chainId = chainId;
-    this.contract = new ethers.Contract(
+    this.contract = ZoraModuleManagerAbi__factory.connect(
       contractAddress,
-      this.abi,
       signerOrProvider
     );
   }
@@ -31,20 +24,20 @@ export class Erc721TransferHelper {
   }
 
   public async isModuleRegistered(moduleAddress: string): Promise<boolean> {
-    return await this.contract.isModuleRegistered(moduleAddress);
+    return await this.contract.moduleRegistered(moduleAddress);
   }
 
   public async setApprovalForModule(
     moduleAddress: string,
     flag: boolean
-  ): Promise<void> {
+  ): Promise<ContractTransaction> {
     return await this.contract.setApprovalForModule(moduleAddress, flag);
   }
 
   public async setBatchApprovalForModules(
     moduleAddresses: string[],
     flag: boolean
-  ): Promise<void> {
+  ): Promise<ContractTransaction> {
     return await this.contract.setBatchApprovalForModules(
       moduleAddresses,
       flag

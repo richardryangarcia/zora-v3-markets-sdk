@@ -3,4 +3,4 @@ export default {
   5: "0x4Ae7072bbfF93F452855d32Bf90E1230Bf7deB26", // ethereum goerli module not registered smh
   137: "0x3634e984Ba0373Cfa178986FD19F03ba4dD8E469", // polygon mainnet,
   80001: "0xCe6cEf2A9028e1C3B21647ae3B4251038109f42a", // polygon mumbai
-};
+} as { [chainId: number]: string };

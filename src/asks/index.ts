@@ -1,40 +1,31 @@
-import { Contract, ethers, Signer } from "ethers";
+import { BigNumber, ContractTransaction, ethers, Signer } from "ethers";
 import { Provider } from "@ethersproject/providers";
-import AskAbi from "abis/ask.abi.json";
 import { ZERO_ADDRESS } from "constants/index";
+import { AskAbi, AskAbi__factory } from "typechain";
 
 export class Ask {
-  public abi: typeof AskAbi = AskAbi;
+  public contract: AskAbi;
   public signerOrProvider: Signer | Provider;
   public contractAddress: string;
-  public chainId: number;
-  public contract: Contract;
 
-  constructor(
-    signerOrProvider: Signer | Provider,
-    contractAddress: string,
-    chainId: number
-  ) {
+  constructor(signerOrProvider: Signer | Provider, contractAddress: string) {
     this.signerOrProvider = signerOrProvider;
     this.contractAddress = contractAddress;
-    this.chainId = chainId;
-    this.contract = new ethers.Contract(
-      contractAddress,
-      this.abi,
-      signerOrProvider
-    );
+    this.contract = AskAbi__factory.connect(contractAddress, signerOrProvider);
   }
 
   public async askForNFT(
     contractAddress: string,
     tokenId: number
-  ): Promise<{
-    seller: string;
-    sellerFundsRecipient: string;
-    askCurrency: string;
-    findersFeeBps: number;
-    askPrice: number;
-  }> {
+  ): Promise<
+    [string, string, string, number, BigNumber] & {
+      seller: string;
+      sellerFundsRecipient: string;
+      askCurrency: string;
+      findersFeeBps: number;
+      askPrice: BigNumber;
+    }
+  > {
     return await this.contract.askForNFT(contractAddress, tokenId);
   }
 
@@ -45,7 +36,7 @@ export class Ask {
     askAmount: number,
     askCurrencyAddress: string = ZERO_ADDRESS,
     findersFeeBps: number = 0 // must be less than 10000
-  ) {
+  ): Promise<ContractTransaction> {
     return await this.contract.createAsk(
       contractAddress,
       tokenId,
@@ -61,7 +52,7 @@ export class Ask {
     tokenId: number,
     askAmount: number,
     askCurrencyAddress: string = ZERO_ADDRESS
-  ) {
+  ): Promise<ContractTransaction> {
     return await this.contract.setAskPrice(
       contractAddress,
       tokenId,
@@ -70,7 +61,10 @@ export class Ask {
     );
   }
 
-  public async cancelAsk(contractAddress: string, tokenId: number) {
+  public async cancelAsk(
+    contractAddress: string,
+    tokenId: number
+  ): Promise<ContractTransaction> {
     return await this.contract.cancelAsk(contractAddress, tokenId);
   }
 
@@ -80,7 +74,7 @@ export class Ask {
     fillAmount: number,
     fillCurrencyAddress: string = ZERO_ADDRESS,
     finderAddress: string
-  ) {
+  ): Promise<ContractTransaction> {
     return await this.contract.fillAsk(
       contractAddress,
       tokenId,
