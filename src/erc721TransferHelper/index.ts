@@ -1,10 +1,9 @@
-import { Contract, ethers, Signer } from "ethers";
+import { Signer } from "ethers";
 import { Provider } from "@ethersproject/providers";
-import TranferHelperAbi from "abis/erc721TransferHelper.abi.json";
 import {
   Erc721TransferHelperAbi,
   Erc721TransferHelperAbi__factory,
-} from "typechain";
+} from "typechain/index";
 
 export class Erc721TransferHelper {
   public contract: Erc721TransferHelperAbi;

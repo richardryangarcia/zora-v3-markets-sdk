@@ -37,14 +37,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AskOmnibus = void 0;
-var index_1 = require("constants/index");
+var index_1 = require("../constants/index");
 var ethers_1 = require("ethers");
-var typechain_1 = require("typechain");
+var index_2 = require("typechain/index");
 var AskOmnibus = /** @class */ (function () {
     function AskOmnibus(signerOrProvider, contractAddress) {
         this.signerOrProvider = signerOrProvider;
         this.contractAddress = contractAddress;
-        this.contract = typechain_1.AskOmnibusAbi__factory.connect(contractAddress, signerOrProvider);
+        this.contract = index_2.AskOmnibusAbi__factory.connect(contractAddress, signerOrProvider);
     }
     AskOmnibus.prototype.askForNFT = function (contractAddress, tokenId) {
         return __awaiter(this, void 0, void 0, function () {

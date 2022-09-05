@@ -1,13 +1,14 @@
 {
-  "name": "zora-market",
-  "version": "1.0.0",
+  "name": "zora-markets",
+  "version": "1.0.3",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "files": [
     "build/**/*"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --declaration",
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate": "pnpm typechain --target=ethers-v5 ./src/abis/*.abi.json --out-dir=./src/typechain"
   },

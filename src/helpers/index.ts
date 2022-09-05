@@ -1,18 +1,18 @@
 import { Provider } from "@ethersproject/providers";
-import { Ask } from "asks";
 import { Signer } from "ethers";
-import askAddresses from "addresses/ask";
-import askOmnibusAddresses from "addresses/askOmnibus";
-import auctionAddresses from "addresses/auctionCoreEth";
-import erc721TransferHelperAddresses from "addresses/erc721TransferHelper";
-import offersAddresses from "addresses/offers";
-import zoraModuleManagerAddresses from "addresses/zoraModuleManager";
-import { AskOmnibus } from "askOmnibus";
-import { AuctionCoreEth } from "auctions";
-import { Erc721TransferHelper } from "erc721TransferHelper";
-import { OffersV1 } from "offers";
-import { ZoraModuleManager } from "zoraModuleManager";
-import { getChainId } from "utils";
+import askAddresses from "../addresses/ask";
+import askOmnibusAddresses from "../addresses/askOmnibus";
+import auctionAddresses from "../addresses/auctionCoreEth";
+import erc721TransferHelperAddresses from "../addresses/erc721TransferHelper";
+import offersAddresses from "../addresses/offers";
+import zoraModuleManagerAddresses from "../addresses/zoraModuleManager";
+import { Ask } from "../asks";
+import { AskOmnibus } from "../askOmnibus";
+import { AuctionCoreEth } from "../auctions";
+import { Erc721TransferHelper } from "../erc721TransferHelper";
+import { OffersV1 } from "../offers";
+import { ZoraModuleManager } from "../zoraModuleManager";
+import { getChainId } from "../utils";
 
 export const ask = async (signerOrProvider: Signer | Provider) => {
   const chainId = await getChainId(signerOrProvider);

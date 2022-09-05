@@ -37,12 +37,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuctionCoreEth = void 0;
-var typechain_1 = require("typechain");
+var index_1 = require("typechain/index");
 var AuctionCoreEth = /** @class */ (function () {
     function AuctionCoreEth(signerOrProvider, contractAddress) {
         this.signerOrProvider = signerOrProvider;
         this.contractAddress = contractAddress;
-        this.contract = typechain_1.AuctionCoreEthAbi__factory.connect(contractAddress, signerOrProvider);
+        this.contract = index_1.AuctionCoreEthAbi__factory.connect(contractAddress, signerOrProvider);
     }
     AuctionCoreEth.prototype.auctionForNFT = function (contractAddress, tokenId) {
         return __awaiter(this, void 0, void 0, function () {

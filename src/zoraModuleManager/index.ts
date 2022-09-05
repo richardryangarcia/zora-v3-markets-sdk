@@ -1,7 +1,9 @@
-import { Contract, ContractTransaction, ethers, Signer } from "ethers";
+import { ContractTransaction, Signer } from "ethers";
 import { Provider } from "@ethersproject/providers";
-import ModuleManagerAbi from "abis/zoraModuleManager.abi.json";
-import { ZoraModuleManagerAbi, ZoraModuleManagerAbi__factory } from "typechain";
+import {
+  ZoraModuleManagerAbi,
+  ZoraModuleManagerAbi__factory,
+} from "typechain/index";
 
 export class ZoraModuleManager {
   public contract: ZoraModuleManagerAbi;

@@ -37,12 +37,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ZoraModuleManager = void 0;
-var typechain_1 = require("typechain");
+var index_1 = require("typechain/index");
 var ZoraModuleManager = /** @class */ (function () {
     function ZoraModuleManager(signerOrProvider, contractAddress) {
         this.signerOrProvider = signerOrProvider;
         this.contractAddress = contractAddress;
-        this.contract = typechain_1.ZoraModuleManagerAbi__factory.connect(contractAddress, signerOrProvider);
+        this.contract = index_1.ZoraModuleManagerAbi__factory.connect(contractAddress, signerOrProvider);
     }
     ZoraModuleManager.prototype.isModuleApproved = function (userAddress, moduleAddress) {
         return __awaiter(this, void 0, void 0, function () {

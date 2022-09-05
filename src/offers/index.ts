@@ -1,7 +1,7 @@
 import { Provider } from "@ethersproject/providers";
-import { ZERO_ADDRESS } from "constants/index";
+import { ZERO_ADDRESS } from "../constants/index";
 import { BigNumber, BigNumberish, ContractTransaction, Signer } from "ethers";
-import { OfferAbi, OfferAbi__factory } from "typechain";
+import { OfferAbi, OfferAbi__factory } from "typechain/index";
 
 export class OffersV1 {
   public contract: OfferAbi;

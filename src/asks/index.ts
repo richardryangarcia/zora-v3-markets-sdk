@@ -1,7 +1,7 @@
 import { BigNumber, ContractTransaction, ethers, Signer } from "ethers";
 import { Provider } from "@ethersproject/providers";
-import { ZERO_ADDRESS } from "constants/index";
-import { AskAbi, AskAbi__factory } from "typechain";
+import { ZERO_ADDRESS } from "../constants/index";
+import { AskAbi, AskAbi__factory } from "typechain/index";
 
 export class Ask {
   public contract: AskAbi;
