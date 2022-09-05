@@ -1,0 +1,29 @@
+{
+  "name": "zora-market",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "build/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "pnpm typechain --target=ethers-v5 ./src/abis/*.abi.json --out-dir=./src/typechain"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@ethersproject/abi": "^5.7.0",
+    "@ethersproject/bytes": "^5.7.0",
+    "@typechain/ethers-v5": "^10.1.0",
+    "@types/node": "^18.7.13",
+    "typechain": "^8.1.0",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "@ethersproject/providers": "^5.7.0",
+    "ethers": "^5.7.0"
+  }
+}
