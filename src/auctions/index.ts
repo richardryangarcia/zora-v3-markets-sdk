@@ -1,6 +1,6 @@
 import { Provider } from "@ethersproject/providers";
 import { BigNumber, BigNumberish, ContractTransaction, Signer } from "ethers";
-import { AuctionCoreEthAbi, AuctionCoreEthAbi__factory } from "typechain/index";
+import { AuctionCoreEthAbi, AuctionCoreEthAbi__factory } from "../typechain";
 
 export class AuctionCoreEth {
   public contract: AuctionCoreEthAbi;

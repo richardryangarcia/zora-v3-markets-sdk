@@ -3,7 +3,7 @@ import { Provider } from "@ethersproject/providers";
 import {
   ZoraModuleManagerAbi,
   ZoraModuleManagerAbi__factory,
-} from "typechain/index";
+} from "../typechain";
 
 export class ZoraModuleManager {
   public contract: ZoraModuleManagerAbi;

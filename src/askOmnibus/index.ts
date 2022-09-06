@@ -1,8 +1,8 @@
 import { Provider } from "@ethersproject/providers";
 import { ZERO_ADDRESS } from "../constants/index";
 import { BigNumber, ContractTransaction, ethers, Signer } from "ethers";
-import { AskOmnibusAbi, AskOmnibusAbi__factory } from "typechain/index";
-import { AsksDataStorage } from "typechain/AskOmnibusAbi";
+import { AskOmnibusAbi, AskOmnibusAbi__factory } from "../typechain";
+import { AsksDataStorage } from "../typechain/AskOmnibusAbi";
 
 export class AskOmnibus {
   public contract: AskOmnibusAbi;

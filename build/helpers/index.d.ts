@@ -1,11 +1,11 @@
 import { Provider } from "@ethersproject/providers";
-import { Ask } from "asks";
 import { Signer } from "ethers";
-import { AskOmnibus } from "askOmnibus";
-import { AuctionCoreEth } from "auctions";
-import { Erc721TransferHelper } from "erc721TransferHelper";
-import { OffersV1 } from "offers";
-import { ZoraModuleManager } from "zoraModuleManager";
+import { Ask } from "../asks";
+import { AskOmnibus } from "../askOmnibus";
+import { AuctionCoreEth } from "../auctions";
+import { Erc721TransferHelper } from "../erc721TransferHelper";
+import { OffersV1 } from "../offers";
+import { ZoraModuleManager } from "../zoraModuleManager";
 export declare const ask: (signerOrProvider: Signer | Provider) => Promise<Ask>;
 export declare const askOmnibus: (signerOrProvider: Signer | Provider) => Promise<AskOmnibus>;
 export declare const auction: (signerOrProvider: Signer | Provider) => Promise<AuctionCoreEth>;

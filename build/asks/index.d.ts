@@ -1,6 +1,6 @@
 import { BigNumber, ContractTransaction, Signer } from "ethers";
 import { Provider } from "@ethersproject/providers";
-import { AskAbi } from "typechain/index";
+import { AskAbi } from "../typechain";
 export declare class Ask {
     contract: AskAbi;
     signerOrProvider: Signer | Provider;

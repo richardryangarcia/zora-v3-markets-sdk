@@ -1,6 +1,6 @@
 import { ContractTransaction, Signer } from "ethers";
 import { Provider } from "@ethersproject/providers";
-import { ZoraModuleManagerAbi } from "typechain/index";
+import { ZoraModuleManagerAbi } from "../typechain";
 export declare class ZoraModuleManager {
     contract: ZoraModuleManagerAbi;
     signerOrProvider: Signer | Provider;

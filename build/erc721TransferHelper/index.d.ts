@@ -1,6 +1,6 @@
 import { Signer } from "ethers";
 import { Provider } from "@ethersproject/providers";
-import { Erc721TransferHelperAbi } from "typechain/index";
+import { Erc721TransferHelperAbi } from "../typechain";
 export declare class Erc721TransferHelper {
     contract: Erc721TransferHelperAbi;
     signerOrProvider: Signer | Provider;

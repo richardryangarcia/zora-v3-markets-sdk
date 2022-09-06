@@ -39,12 +39,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Ask = void 0;
 var ethers_1 = require("ethers");
 var index_1 = require("../constants/index");
-var index_2 = require("typechain/index");
+var typechain_1 = require("../typechain");
 var Ask = /** @class */ (function () {
     function Ask(signerOrProvider, contractAddress) {
         this.signerOrProvider = signerOrProvider;
         this.contractAddress = contractAddress;
-        this.contract = index_2.AskAbi__factory.connect(contractAddress, signerOrProvider);
+        this.contract = typechain_1.AskAbi__factory.connect(contractAddress, signerOrProvider);
     }
     Ask.prototype.askForNFT = function (contractAddress, tokenId) {
         return __awaiter(this, void 0, void 0, function () {

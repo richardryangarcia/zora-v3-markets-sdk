@@ -40,19 +40,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.zoraModuleManager = exports.offers = exports.erc721TransferHelper = exports.auction = exports.askOmnibus = exports.ask = void 0;
-var asks_1 = require("asks");
-var ask_1 = __importDefault(require("addresses/ask"));
-var askOmnibus_1 = __importDefault(require("addresses/askOmnibus"));
-var auctionCoreEth_1 = __importDefault(require("addresses/auctionCoreEth"));
-var erc721TransferHelper_1 = __importDefault(require("addresses/erc721TransferHelper"));
-var offers_1 = __importDefault(require("addresses/offers"));
-var zoraModuleManager_1 = __importDefault(require("addresses/zoraModuleManager"));
-var askOmnibus_2 = require("askOmnibus");
-var auctions_1 = require("auctions");
-var erc721TransferHelper_2 = require("erc721TransferHelper");
-var offers_2 = require("offers");
-var zoraModuleManager_2 = require("zoraModuleManager");
-var utils_1 = require("utils");
+var ask_1 = __importDefault(require("../addresses/ask"));
+var askOmnibus_1 = __importDefault(require("../addresses/askOmnibus"));
+var auctionCoreEth_1 = __importDefault(require("../addresses/auctionCoreEth"));
+var erc721TransferHelper_1 = __importDefault(require("../addresses/erc721TransferHelper"));
+var offers_1 = __importDefault(require("../addresses/offers"));
+var zoraModuleManager_1 = __importDefault(require("../addresses/zoraModuleManager"));
+var asks_1 = require("../asks");
+var askOmnibus_2 = require("../askOmnibus");
+var auctions_1 = require("../auctions");
+var erc721TransferHelper_2 = require("../erc721TransferHelper");
+var offers_2 = require("../offers");
+var zoraModuleManager_2 = require("../zoraModuleManager");
+var utils_1 = require("../utils");
 var ask = function (signerOrProvider) { return __awaiter(void 0, void 0, void 0, function () {
     var chainId;
     return __generator(this, function (_a) {

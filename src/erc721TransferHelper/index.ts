@@ -3,7 +3,7 @@ import { Provider } from "@ethersproject/providers";
 import {
   Erc721TransferHelperAbi,
   Erc721TransferHelperAbi__factory,
-} from "typechain/index";
+} from "../typechain";
 
 export class Erc721TransferHelper {
   public contract: Erc721TransferHelperAbi;

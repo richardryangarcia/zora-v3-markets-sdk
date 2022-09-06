@@ -38,12 +38,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OffersV1 = void 0;
 var index_1 = require("../constants/index");
-var index_2 = require("typechain/index");
+var typechain_1 = require("../typechain");
 var OffersV1 = /** @class */ (function () {
     function OffersV1(signerOrProvider, contractAddress) {
         this.signerOrProvider = signerOrProvider;
         this.contractAddress = contractAddress;
-        this.contract = index_2.OfferAbi__factory.connect(contractAddress, signerOrProvider);
+        this.contract = typechain_1.OfferAbi__factory.connect(contractAddress, signerOrProvider);
     }
     OffersV1.prototype.offersForNFT = function (contractAddress, tokenId, arg2) {
         return __awaiter(this, void 0, void 0, function () {

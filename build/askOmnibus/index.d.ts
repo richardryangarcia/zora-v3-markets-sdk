@@ -1,7 +1,7 @@
 import { Provider } from "@ethersproject/providers";
 import { BigNumber, ContractTransaction, Signer } from "ethers";
-import { AskOmnibusAbi } from "typechain/index";
-import { AsksDataStorage } from "typechain/AskOmnibusAbi";
+import { AskOmnibusAbi } from "../typechain";
+import { AsksDataStorage } from "../typechain/AskOmnibusAbi";
 export declare class AskOmnibus {
     contract: AskOmnibusAbi;
     signerOrProvider: Signer | Provider;
