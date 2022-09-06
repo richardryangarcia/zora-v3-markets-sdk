@@ -43,6 +43,8 @@ var getChainId = function (signerOrProvider) { return __awaiter(void 0, void 0, 
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
+                if (!signerOrProvider)
+                    throw new Error("Signer or provider cannot be null");
                 isSigner = ethers_1.Signer.isSigner(signerOrProvider);
                 if (!isSigner) return [3 /*break*/, 2];
                 return [4 /*yield*/, signerOrProvider.getChainId()];
